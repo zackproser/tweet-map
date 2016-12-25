@@ -1,0 +1,39 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+
+<script src="javascripts/jquery-3.1.1.min.js"></script>
+<script src="javascripts/markerclusterer.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="javascripts/main.js"></script>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div style="background-color: #{{backgroundColor}}" class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">{{appName}}</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/about">About</a></li>
+        <li><a href="mailto:{{contactEmail}}">Contact</a></li>
+        <li id="connection-status-panel">
+        	<a href="#" class="status-connected"><i class="fa connection-status fa-check-circle"></i> Connected</a>
+        	<a href="#" class="status-disconnected hidden"><i class="fa connection-status fa-times-circle-o"></i> Disconnected</i></a>
+        </li>
+        <li class="jump-panel">
+        	<a id="jump-behavior" href="#" class="btn btn-success">Jump to Latest</a>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+<div>
+	{{{body}}}
+</div>

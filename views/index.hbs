@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <script>
+      function initClient() {
+        var controls = {
+          statusConnected: $('#status-connected'),
+          statusDisconnected: $('#status-disconnected'),
+          jumpToggle: $('#jump-behavior')
+        }; 
+        var socket = io();
+        var client = Client.init(document.getElementById('map'), socket, controls, {{ startLat }}, {{ startLong }}, {{ startZoom }})
+      }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ googleMapsApiKey }}&callback=initClient" async defer>
+    </script>
+
+    </head>
+
+    <body class="{{bodyClass}}" style="background-color: {{backgroundColor}}">
+      <div id="map"></div>
+    </body>
+
+</html>
